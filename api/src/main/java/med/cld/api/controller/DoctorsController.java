@@ -3,6 +3,8 @@ package med.cld.api.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -30,8 +32,8 @@ public class DoctorsController {
   }
 
   @GetMapping
-  public List<ListDoctorData> listing() {
-    return repository.findAll().stream().map(ListDoctorData::new).toList();
+  public Page<ListDoctorData> listing(Pageable pagination) {
+    return repository.findAll(pagination).map(ListDoctorData::new);
   }
 
 }
