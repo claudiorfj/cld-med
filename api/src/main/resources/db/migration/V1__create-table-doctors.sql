@@ -10,7 +10,7 @@ create table doctors(
     zipCode varchar(9) not null,
     complement varchar(100),
     number varchar(20),
-    state char(2) not null,
+    state char(100) not null,
     city varchar(100) not null,
 
     primary key(id)
