@@ -1,7 +1,6 @@
 package med.cld.api.doctor;
 
 import med.cld.api.address.Address;
-import java.util.Objects;
 
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
