@@ -1,6 +1,6 @@
 package med.cld.api.doctor;
 
-import med.cld.api.address.AddressData;
+import med.cld.api.address.Address;
 
 public record DoctorDetailData(
   Long id,
@@ -9,11 +9,11 @@ public record DoctorDetailData(
   String crm,
   String phone,
   Specialty specialty,
-  AddressData address
+  Address address
 ) {
   
   public DoctorDetailData(Doctor doctor) {
-    this(doctor.getId(), doctor.getName(), doctor.getEmail(), doctor.getCrm(), doctor.getPhone(), doctor.getSpecialty(), doctor.getAddressData());
+    this(doctor.getId(), doctor.getName(), doctor.getEmail(), doctor.getCrm(), doctor.getPhone(), doctor.getSpecialty(), doctor.getAddress());
   }
 
 }
