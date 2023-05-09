@@ -1,7 +1,7 @@
 package med.cld.api.doctor;
 
 import med.cld.api.address.Address;
-
+import med.cld.api.address.AddressData;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -63,5 +63,6 @@ public class Doctor {
   public void delete() {
     this.active = false;
   }
+
 
 }
