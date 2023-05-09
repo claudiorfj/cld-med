@@ -31,6 +31,7 @@ public class Doctor {
   private String email;
   private String crm;
   private String phone;
+  private Boolean active;
 
   @Enumerated(EnumType.STRING)
   private Specialty specialty;
@@ -39,6 +40,7 @@ public class Doctor {
   private Address address;
 
   public Doctor(RegisterDoctorData data) {
+    this.active = true;
     this.name = data.name();
     this.email = data.email();
     this.crm = data.crm();
@@ -57,6 +59,10 @@ public class Doctor {
     if (data.address() != null){
       this.address.updateData(data.address());
     }
+  }
+
+  public void delete() {
+    this.active = false;
   }
 
 }
