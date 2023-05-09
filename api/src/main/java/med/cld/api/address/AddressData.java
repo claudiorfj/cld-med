@@ -1,5 +1,28 @@
 package med.cld.api.address;
 
-public record AddressData(String street, String district, String zipCode, String city, String state, String complement, String number) {
+import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.Pattern;
+
+public record AddressData(
+
+  @NotBlank
+  String street, 
+
+  @NotBlank
+  String district, 
+
+  @NotBlank
+  @Pattern(regexp = "\\d{8}")
+  String zipCode, 
+
+  @NotBlank
+  String city, 
+
+  @NotBlank
+  String state, 
+
+  String complement, 
+
+  String number) {
   
 }
