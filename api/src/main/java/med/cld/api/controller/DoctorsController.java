@@ -8,6 +8,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.web.PageableDefault;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -18,6 +19,7 @@ import med.cld.api.doctor.Doctor;
 import med.cld.api.doctor.DoctorRepository;
 import med.cld.api.doctor.ListDoctorData;
 import med.cld.api.doctor.RegisterDoctorData;
+import med.cld.api.doctor.UpdateDoctorData;
 
 @RestController
 @RequestMapping("/doctors")
@@ -35,6 +37,13 @@ public class DoctorsController {
   @GetMapping
   public Page<ListDoctorData> listing(@PageableDefault(size = 10, sort = {"name"}) Pageable pagination) {
     return repository.findAll(pagination).map(ListDoctorData::new);
+  }
+
+  @PutMapping
+  @Transactional
+  public void update(@RequestBody @Valid UpdateDoctorData data){
+    var doctor = repository.getReferenceById(data.id());
+    doctor.updateData(data);
   }
 
 }

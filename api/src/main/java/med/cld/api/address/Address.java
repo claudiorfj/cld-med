@@ -29,4 +29,29 @@ public class Address {
     this.zipCode = data.zipCode();
   }
 
+  public void updateData(AddressData data) {
+    if (data.street() != null){
+      this.street = data.street();
+    }
+    if (data.district() != null){
+      this.district = data.district();
+    }
+    if (data.zipCode() != null){
+      this.zipCode = data.zipCode();
+    }
+    if (data.state() != null){
+      this.state = data.state();
+    }
+    if (data.city() != null){
+      this.city = data.city();
+    }
+    if (data.number() != null){
+      this.number = data.number();
+    }
+    if (data.complement() != null){
+      this.complement = data.complement();
+    }
+
+  }
+
 }
