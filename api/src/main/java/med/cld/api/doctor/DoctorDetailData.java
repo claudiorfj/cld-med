@@ -13,7 +13,7 @@ public record DoctorDetailData(
 ) {
   
   public DoctorDetailData(Doctor doctor) {
-    this(doctor.getId(), doctor.getName(), doctor.getEmail(), doctor.getCrm(), doctor.getPhone(), doctor.getSpecialty(), doctor.getAddress());
+    this(doctor.getId(), doctor.getName(), doctor.getEmail(), doctor.getCrm(), doctor.getPhone(), doctor.getSpecialty(), doctor.getAddressData());
   }
 
 }
