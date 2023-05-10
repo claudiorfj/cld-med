@@ -1,6 +1,5 @@
-package med.cld.api.doctor;
+package med.cld.api.domain.doctor;
 
-import med.cld.api.address.Address;
 import jakarta.persistence.Embedded;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
@@ -14,6 +13,7 @@ import lombok.AllArgsConstructor;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import med.cld.api.domain.address.Address;
 
 @Table(name = "doctors")
 @Entity(name = "Doctor")

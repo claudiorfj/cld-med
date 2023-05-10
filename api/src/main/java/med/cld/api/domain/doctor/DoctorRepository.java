@@ -1,4 +1,4 @@
-package med.cld.api.doctor;
+package med.cld.api.domain.doctor;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

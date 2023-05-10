@@ -1,6 +1,6 @@
-package med.cld.api.patient;
+package med.cld.api.domain.patient;
 
-import med.cld.api.address.Address;
+import med.cld.api.domain.address.Address;
 
 public record PatientDetailData(
   Long id,

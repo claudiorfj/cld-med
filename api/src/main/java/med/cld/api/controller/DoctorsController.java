@@ -17,12 +17,12 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
-import med.cld.api.doctor.Doctor;
-import med.cld.api.doctor.DoctorDetailData;
-import med.cld.api.doctor.DoctorRepository;
-import med.cld.api.doctor.ListDoctorData;
-import med.cld.api.doctor.RegisterDoctorData;
-import med.cld.api.doctor.UpdateDoctorData;
+import med.cld.api.domain.doctor.Doctor;
+import med.cld.api.domain.doctor.DoctorDetailData;
+import med.cld.api.domain.doctor.DoctorRepository;
+import med.cld.api.domain.doctor.ListDoctorData;
+import med.cld.api.domain.doctor.RegisterDoctorData;
+import med.cld.api.domain.doctor.UpdateDoctorData;
 
 @RestController
 @RequestMapping("/doctors")

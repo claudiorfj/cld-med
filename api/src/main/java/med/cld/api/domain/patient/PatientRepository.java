@@ -1,4 +1,4 @@
-package med.cld.api.patient;
+package med.cld.api.domain.patient;
 
 import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;

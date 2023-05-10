@@ -1,4 +1,4 @@
-package med.cld.api.doctor;
+package med.cld.api.domain.doctor;
 
 public record ListDoctorData(
   String name,
