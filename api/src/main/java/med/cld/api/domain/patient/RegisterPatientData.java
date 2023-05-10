@@ -9,23 +9,23 @@ import med.cld.api.domain.address.AddressData;
 
 public record RegisterPatientData(
 
-  @NotBlank
+  @NotBlank(message = "{name.required}")
   String name,
 
   String sex, 
 
-  @NotBlank
-  @Pattern(regexp = "\\d{11}")
+  @NotBlank(message = "{cpf.required}")
+  @Pattern(regexp = "\\d{11}", message = "{cpf.invalid}")
   String cpf, 
 
-  @NotBlank
-  @Email
+  @NotBlank(message = "{email.required}")
+  @Email(message = "{email.invalid}")
   String email, 
 
-  @NotBlank
+  @NotBlank(message = "{phone.required}")
   String phone, 
   
-  @NotNull
+  @NotNull(message = "{address.required}")
   @Valid
   AddressData address) {
 

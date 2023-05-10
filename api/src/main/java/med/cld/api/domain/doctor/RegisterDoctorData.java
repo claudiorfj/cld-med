@@ -9,24 +9,24 @@ import med.cld.api.domain.address.AddressData;
 
 public record RegisterDoctorData(
 
-  @NotBlank
+  @NotBlank(message = "{name.required}")
   String name,
 
-  @NotBlank
-  @Email
+  @NotBlank(message = "{email.required}")
+  @Email(message = "{email.invalid}")
   String email, 
 
-  @NotBlank
+  @NotBlank(message = "{phone.required}")
   String phone,
 
-  @NotBlank
-  @Pattern(regexp = "\\d{4,6}")
+  @NotBlank(message = "{crm.required}")
+  @Pattern(regexp = "\\d{4,6}", message = "{crm.invalid}")
   String crm, 
 
-  @NotNull
+  @NotNull(message = "{specialty.required}")
   Specialty specialty, 
 
-  @NotNull
+  @NotNull(message = "{address.required}")
   @Valid
   AddressData address) {
   
