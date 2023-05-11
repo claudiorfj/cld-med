@@ -21,15 +21,12 @@ public class ScheduleAppointment {
   private PatientRepository patientRepository;
 
   public void toSchedule (ScheduleAppointmentData data) {
-    
     if(!patientRepository.existsById(data.idPatient())){
       throw new ExceptionValidation("ID Patient not found");
     }
-    
     if(data.idDoctor() != null && !doctorRepository.existsById(data.idDoctor())){
       throw new ExceptionValidation("ID Doctor not found");
     }
-
     var doctor = doctorRepository.getReferenceById(data.idDoctor());
     var patient = selectDoctor(data);
     var appointment = new Appointment(null, doctor, patient, data.date());
@@ -42,7 +39,7 @@ public class ScheduleAppointment {
     }
 
     if (data.specialty() == null) {
-      throw new ExceptionValidation("Specialty is mandatory if you don't choose a doctor")
+      throw new ExceptionValidation("Specialty is mandatory if you don't choose a doctor");
     }
 
     return doctorRepository.chooseFreeDoctor(data.specialty(), data.date());
