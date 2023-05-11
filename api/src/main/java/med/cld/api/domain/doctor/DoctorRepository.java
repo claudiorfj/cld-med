@@ -33,6 +33,6 @@ public interface DoctorRepository extends JpaRepository<Doctor, Long>{
       from Doctor d
       where d.id = :id
       """)
-  Boolean findActiveById(Long idDoctor);
+  Boolean findActiveById(Long id);
   
 }
