@@ -25,7 +25,7 @@ public class ScheduleAppointment {
 
   private List<ValidatorAppointmentSchedule> validators;
 
-  public void toSchedule(ScheduleAppointmentData data) {
+  public AppointmentDetailData toSchedule(ScheduleAppointmentData data) {
     if (!patientRepository.existsById(data.idPatient())) {
       throw new ExceptionValidation("ID Patient not found");
     }
@@ -36,8 +36,12 @@ public class ScheduleAppointment {
     
     var doctor = doctorRepository.getReferenceById(data.idDoctor());
     var patient = selectDoctor(data);
+    if(doctor == null){
+      throw new ExceptionValidation("There are no doctors available");
+    }
     var appointment = new Appointment(null, doctor, patient, data.date());
     appointmentRepository.save(appointment);
+    return new AppointmentDetailData(appointment);
   }
 
   private Doctor selectDoctor(ScheduleAppointmentData data) {
