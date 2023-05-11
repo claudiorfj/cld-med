@@ -1,7 +1,6 @@
 package med.cld.api.domain.appointment;
 
 import java.time.LocalDateTime;
-import java.time.LocalTime;
 
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -13,8 +12,8 @@ import med.cld.api.domain.doctor.Doctor;
 import med.cld.api.domain.patient.Patient;
 
 public class Appointment {
-  
-  public Appointment(Object object, Doctor doctor2, Patient patient2, LocalDateTime date2) {
+
+  public Appointment(Object object, Doctor doctor, Doctor patient, LocalDateTime date) {
   }
 
   @Id
