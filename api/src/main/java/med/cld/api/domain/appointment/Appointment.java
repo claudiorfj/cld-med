@@ -29,4 +29,5 @@ public class Appointment {
   private Patient patient;
 
   private LocalDateTime date;
+
 }
