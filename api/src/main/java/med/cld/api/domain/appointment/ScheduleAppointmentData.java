@@ -1,9 +1,11 @@
 package med.cld.api.domain.appointment;
 
-import java.time.LocalDate;
+import java.time.LocalDateTime;
+
 
 import jakarta.validation.constraints.Future;
 import jakarta.validation.constraints.NotNull;
+import med.cld.api.domain.doctor.Specialty;
 
 public record ScheduleAppointmentData(
   
@@ -12,8 +14,12 @@ public record ScheduleAppointmentData(
   @NotNull
   Long idPatient,
 
-  @NotNull
   @Future
-  LocalDate data) {
+  @NotNull
+  LocalDateTime date,
+  
+  Specialty specialty
+
+  ) {
 
 }

@@ -9,15 +9,19 @@ import org.springframework.web.bind.annotation.RestController;
 import jakarta.transaction.Transactional;
 import jakarta.validation.Valid;
 import med.cld.api.domain.appointment.AppointmentDetailData;
+import med.cld.api.domain.appointment.ScheduleAppointment;
 import med.cld.api.domain.appointment.ScheduleAppointmentData;
 
 @RestController
 @RequestMapping("/appointment")
 public class AppointmentController {
 
+  private ScheduleAppointment schedule;
+
   @PostMapping
   @Transactional
   public ResponseEntity schedule (@RequestBody @Valid ScheduleAppointmentData data) {
+    schedule.toSchedule(data);
     return ResponseEntity.ok(new AppointmentDetailData(null, null, null, null));
   } 
   
