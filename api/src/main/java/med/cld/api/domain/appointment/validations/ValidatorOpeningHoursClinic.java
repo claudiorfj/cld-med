@@ -2,10 +2,13 @@ package med.cld.api.domain.appointment.validations;
 
 import java.time.DayOfWeek;
 
+import org.springframework.stereotype.Component;
+
 import jakarta.validation.ValidationException;
 import med.cld.api.domain.appointment.ScheduleAppointmentData;
 
-public class ValidatorOpeningHoursClinic {
+@Component
+public class ValidatorOpeningHoursClinic implements ValidatorAppointmentSchedule{
   public void validate(ScheduleAppointmentData data){
     var appointmentDate = data.date();
     var sunday = appointmentDate.getDayOfWeek().equals(DayOfWeek.SUNDAY);

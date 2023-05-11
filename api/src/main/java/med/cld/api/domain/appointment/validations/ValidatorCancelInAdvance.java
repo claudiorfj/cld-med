@@ -3,10 +3,13 @@ package med.cld.api.domain.appointment.validations;
 import java.time.Duration;
 import java.time.LocalDateTime;
 
+import org.springframework.stereotype.Component;
+
 import jakarta.validation.ValidationException;
 import med.cld.api.domain.appointment.ScheduleAppointmentData;
 
-public class ValidatorCancelInAdvance {
+@Component
+public class ValidatorCancelInAdvance implements ValidatorAppointmentSchedule{
   public void validate(ScheduleAppointmentData data){
     var appointmentDate = data.date();
     var now = LocalDateTime.now();
